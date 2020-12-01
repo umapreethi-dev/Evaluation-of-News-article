@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Evaluation of News article</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="">
+        <h1>Evaluation of News Article</h1>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>
+          This web tool allows users to run Natural Language Processing (NLP) on
+          articles or blogs found on other websites. NLP is the ability of an
+          application to understand the human language, written or oral.
+        </h2>
+
+        <form class="" onsubmit="return Client.handleSubmit(event)">
+          <label class="text"
+            >Please enter a URL to Evaluate your article/blog posts</label
+          >
+          <input
+            id="url"
+            type="text"
+            name="input"
+            value=""
+            placeholder="https://"
+          />
+          <div id="error" class="error"></div>
+          <input
+            type="submit"
+            name=""
+            value="submit"
+            onclick="return Client.handleSubmit(event)"
+            onsubmit="return handleSubmit(event)"
+          />
+        </form>
+      </section>
+
+      <section>
+        <div class="text"><em>Evaluation Results:</em></div>
+        <div id="confidence" class="text"></div>
+        <div id="irony" class="text"></div>
+        <div id="score_tag" class="text"></div>
+        <div id="subjectivity" class="text"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p class="text">An Udacity project</p>
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>
